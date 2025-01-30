@@ -5,6 +5,7 @@
 #include <stack>
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 class RPN
 {
@@ -18,7 +19,7 @@ class RPN
 		RPN &operator=(const RPN &other);
 
 	void calculate(std::string str);
-
+	void calculator(char op);
 };
 
 #endif
