@@ -1,7 +1,7 @@
 CXX      = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET   = RPN
-SRC      = main.cpp RPN.cpp
+TARGET   = PmergeMe
+SRC      = main.cpp PmergeMe.cpp
 OBJ      = $(SRC:.cpp=.o)
 
 all: $(TARGET)
