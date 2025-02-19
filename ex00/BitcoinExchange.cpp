@@ -75,6 +75,7 @@ void BitcoinExchange::printBitcoinPrices()
         std::cout << it->first << ": " << it->second << std::endl;
     }
 }
+
 bool isLeapYear(int year)
 {
     if (year % 4 != 0)
@@ -164,6 +165,7 @@ void inputExchange(std::ifstream &file, const BitcoinExchange &exchange)
 	if (!std::getline(file, line))
         return;
 
+    std::cout << "Input date | Nb of btc | Total value " << std::endl;
     while (std::getline(file, line))
     {
         std::istringstream ss(line);

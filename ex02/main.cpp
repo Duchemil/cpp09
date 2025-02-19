@@ -34,20 +34,27 @@ int main(int argc, char **argv)
 
         PmergeMe pmerge;
         pmerge.add_param(argc, argv);
+
+        std::cout << "Unsorted sequence: ";
+        for (int i = 1; i < argc; ++i)
+            std::cout << argv[i] << " ";
+        std::cout << std::endl;
+
         pmerge.ford_sort();
 
         std::vector<int> sorted_vector = pmerge.get_vector();
         std::deque<int> sorted_deque = pmerge.get_deque();
 
-        std::cout << "Sorted vector: ";
+        std::cout << "Sorted sequence: ";
         for (size_t i = 0; i < sorted_vector.size(); ++i)
             std::cout << sorted_vector[i] << " ";
         std::cout << std::endl;
 
-        std::cout << "Sorted deque: ";
-        for (size_t i = 0; i < sorted_deque.size(); ++i)
-            std::cout << sorted_deque[i] << " ";
-        std::cout << std::endl;
+        std::cout << "Time to process a range of " << sorted_vector.size() << " elements with std::vector: "
+                  << std::fixed << std::setprecision(5) << pmerge.get_vector_time() * 1e6 << " us" << std::endl;
+
+        std::cout << "Time to process a range of " << sorted_deque.size() << " elements with std::deque: "
+                  << std::fixed << std::setprecision(5) << pmerge.get_deque_time() * 1e6 << " us" << std::endl;
 
     }
     catch (const std::exception &e)

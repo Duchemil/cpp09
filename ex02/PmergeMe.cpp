@@ -156,16 +156,10 @@ void PmergeMe::ford_sort()
     clock_t start_vector = clock();
     merge_insertion_sort(this->_vector, 0, this->_vector.size() - 1);
     clock_t end_vector = clock();
-    double time_vector = static_cast<double>(end_vector - start_vector) / CLOCKS_PER_SEC;
+    this->_vector_time = static_cast<double>(end_vector - start_vector) / CLOCKS_PER_SEC;
 
     clock_t start_deque = clock();
     merge_insertion_sort(this->_deque, 0, this->_deque.size() - 1);
     clock_t end_deque = clock();
-    double time_deque = static_cast<double>(end_deque - start_deque) / CLOCKS_PER_SEC;
-
-    std::cout << "Time to process a range of " << this->_vector.size() << " elements with std::vector: "
-              << std::fixed << std::setprecision(5) << time_vector * 1e6 << " us" << std::endl;
-
-    std::cout << "Time to process a range of " << this->_deque.size() << " elements with std::deque: "
-              << std::fixed << std::setprecision(5) << time_deque * 1e6 << " us" << std::endl;
+    this->_deque_time = static_cast<double>(end_deque - start_deque) / CLOCKS_PER_SEC;
 }

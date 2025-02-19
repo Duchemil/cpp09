@@ -14,23 +14,27 @@
 
 class PmergeMe
 {
-	private:
-		std::vector<int> _vector;
-		std::deque<int> _deque;
+    private:
+        std::vector<int> _vector;
+        std::deque<int> _deque;
+        double _vector_time;
+        double _deque_time;
 
-	public:
-		PmergeMe();
-		PmergeMe(std::vector<int> _vector, std::deque<int> _deque);
-		PmergeMe(const PmergeMe &other);
-		PmergeMe &operator=(const PmergeMe &other);
-		~PmergeMe();
+    public:
+        PmergeMe();
+        PmergeMe(std::vector<int> _vector, std::deque<int> _deque);
+        PmergeMe(const PmergeMe &other);
+        PmergeMe &operator=(const PmergeMe &other);
+        ~PmergeMe();
 
-		void add_param(int argc, char **argv);
-		void ford_sort();
+        void add_param(int argc, char **argv);
+        void ford_sort();
 
-		std::vector<int> get_vector() const { return this->_vector; }
-		std::deque<int> get_deque() const { return this->_deque; }
-		void merge_insertion_sort(std::vector<int> &vec, int left, int right);
+        std::vector<int> get_vector() const { return this->_vector; }
+        std::deque<int> get_deque() const { return this->_deque; }
+        double get_vector_time() const { return this->_vector_time; }
+        double get_deque_time() const { return this->_deque_time; }
+        void merge_insertion_sort(std::vector<int> &vec, int left, int right);
         void merge_insertion_sort(std::deque<int> &deq, int left, int right);
         void merge(std::vector<int> &vec, int left, int mid, int right);
         void merge(std::deque<int> &deq, int left, int mid, int right);
